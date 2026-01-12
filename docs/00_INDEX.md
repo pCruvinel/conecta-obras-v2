@@ -59,6 +59,15 @@
 
 ---
 
+## ⚡ Workflows do Time
+
+Para iniciar sua sessão e carregar seu contexto:
+
+- **Pedro**: Digite `/fluxo-pedro` (Carrega contexto de CRM, SDR, IA)
+- **Kassio**: Digite `/fluxo-kassio` (Carrega contexto de Auth, Leads, Admin)
+
+---
+
 ## 🚀 Comandos Úteis do Projeto
 
 ```bash
