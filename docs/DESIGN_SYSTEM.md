@@ -22,18 +22,18 @@
 
 ## 1. Visão Geral
 
-O **Sistema de Design Conecta** é um framework completo de componentes React construído sobre Next.js 16, Radix UI e Tailwind CSS v4, projetado para criar interfaces consistentes, acessíveis e escaláveis.
+O **Sistema de Design Conecta** é um framework completo de componentes React construído sobre Next.js 15, Radix UI e Tailwind CSS v4, projetado para criar interfaces consistentes, acessíveis e escaláveis.
 
 ### 1.1 Stack Tecnológica
 
-- **Framework**: Next.js 16.0.10
-- **Runtime**: React 19.2.0
-- **UI Primitives**: Radix UI (conjunto completo)
-- **Styling**: Tailwind CSS v4.1.9
+- **Framework**: Next.js 15.5.9
+- **Runtime**: React 19.0.0
+- **UI Primitives**: Radix UI (27 primitivos instalados)
+- **Styling**: Tailwind CSS v4.1.18
 - **TypeScript**: v5
-- **Animações**: tailwindcss-animate + tw-animate-css
-- **Formulários**: React Hook Form + Zod
-- **Ícones**: Lucide React
+- **Animações**: tailwindcss-animate
+- **Formulários**: React Hook Form 7.71 + Zod 4.3
+- **Ícones**: Lucide React 0.562
 
 ### 1.2 Características Principais
 

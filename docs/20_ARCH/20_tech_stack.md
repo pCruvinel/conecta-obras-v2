@@ -12,27 +12,27 @@
 
 | Tecnologia | Versão | Propósito |
 |------------|--------|-----------|
-| **Next.js** | `^16.0.10+` | Framework React (App Router) |
-| **React** | `^19.2.0+` | UI Library |
-| **TypeScript** | `^5.x+` | Type Safety |
+| **Next.js** | `15.5.9` | Framework React (App Router) |
+| **React** | `19.0.0` | UI Library |
+| **TypeScript** | `5.x` | Type Safety |
 
 ### UI & Styling
 
 | Tecnologia | Versão | Propósito |
 |------------|--------|-----------|
-| **Tailwind CSS** | `^4.1.9+` | Utility-first styling |
+| **Tailwind CSS** | `4.1.18` | Utility-first styling |
 | **shadcn/ui** | `latest` | Component library |
-| **Radix UI** | `latest` | Primitivos acessíveis |
-| **Lucide Icons** | `latest` | Iconografia |
+| **Radix UI** | `27 primitivos` | Primitivos acessíveis |
+| **Lucide Icons** | `0.562.0` | Iconografia |
 
 ### State & Data
 
 | Tecnologia | Versão | Propósito |
 |------------|--------|-----------|
-| **TanStack Query** | `^5.x` | Server state / caching |
-| **Zustand** | `^5.x` | Client state (quando necessário) |
-| **React Hook Form** | `^7.x` | Formulários |
-| **Zod** | `^3.x` | Validação de schemas |
+| **TanStack Query** | `5.90.16` | Server state / caching |
+| **Zustand** | `5.0.10` | Client state (quando necessário) |
+| **React Hook Form** | `7.71.0` | Formulários |
+| **Zod** | `4.3.5` | Validação de schemas |
 
 ---
 
@@ -181,7 +181,7 @@ src/
 
 | Tecnologia | Novidades |
 |------------|-----------|
-| **Next.js 16** | Turbopack estável, melhorias no App Router |
+| **Next.js 15** | Turbopack estável, App Router otimizado |
 | **React 19** | React Compiler, Server Components otimizados |
 | **Tailwind v4** | Nova engine, sintaxe simplificada, CSS nativo |
 

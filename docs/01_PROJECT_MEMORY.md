@@ -9,19 +9,21 @@
 
 | Campo | Valor |
 |-------|-------|
-| **Fase** | `Estruturação / Pré-MVP` |
-| **Sprint** | `Documentação + Setup` |
-| **Foco Principal** | Documentar sistema e preparar desenvolvimento |
+| **Fase** | `Setup Concluído / Pré-MVP` |
+| **Sprint** | `Estrutura + Componentes UI` |
+| **Foco Principal** | Configurar projeto e preparar componentes base |
 
 ### Stack Tecnológica
 
 ```
-Frontend: Next.js 16.0.10+ (App Router) + React 19.2.0+ + TypeScript 5+
-UI:       Tailwind CSS 4.1.9+ + shadcn/ui + Radix UI
+Frontend: Next.js 15.5.9 (App Router) + React 19 + TypeScript 5
+UI:       Tailwind CSS 4.1.18 + shadcn/ui + Radix UI (27 primitivos)
+State:    TanStack Query 5.90 + Zustand 5.0
+Forms:    React Hook Form 7.71 + Zod 4.3
 Backend:  Supabase (Auth, Database, Storage, Edge Functions)
 Database: PostgreSQL 15+
 Deploy:   Vercel (Frontend) + Supabase Cloud (Backend)
-APIs:     PH3 (pessoa física) + Azulx (CNPJ)
+APIs:     PH3 (pessoa física) + Zoox (CNPJ)
 ```
 
 ### Resumo do Produto
@@ -31,6 +33,15 @@ APIs:     PH3 (pessoa física) + Azulx (CNPJ)
 - Enriquecimento de contatos via APIs
 - CRM integrado para acompanhamento
 - Hierarquia multi-tenant (ADM → Franquia → Loja → Vendedor)
+
+### Equipe de Desenvolvimento
+
+| Dev | Papel | Foco Inicial |
+|-----|-------|--------------|
+| **Kassio** (Dev 2) | **Fundação & Dados** | Login, Auth, Leads, Admin |
+| **Pedro** (Dev 1) | **Gestão & Inteligência** | CRM, SDR, Consulta Plus |
+
+> 🚀 **Backlog Detalhado:** [16_backlog_desenvolvimento.md](./10_PRODUCT/16_backlog_desenvolvimento.md)
 
 ---
 
@@ -53,7 +64,7 @@ APIs:     PH3 (pessoa física) + Azulx (CNPJ)
 
 ### MVP - Prioridade Alta
 
-- [ ] `[P0]` Configurar projeto Next.js com estrutura documentada
+- [x] `[P0]` Configurar projeto Next.js com estrutura documentada ✅
 - [ ] `[P0]` Criar conta Supabase e schema inicial
 - [ ] `[P0]` Implementar autenticação (login, registro, recuperação)
 - [ ] `[P0]` Criar trigger auth → public.usuarios
@@ -104,6 +115,16 @@ APIs:     PH3 (pessoa física) + Azulx (CNPJ)
   - Regras de negócio e permissões
   - Módulo de Leads documentado
   - Action items da reunião
+- ✅ **`RULES.md` criado** — Consolidação imutável de todas as regras do projeto
+- ✅ **Projeto Next.js inicializado**:
+  - 536 pacotes instalados (0 vulnerabilidades)
+  - Next.js 15.5.9 + React 19 + TypeScript 5
+  - Tailwind CSS 4.1.18 configurado
+  - 27 primitivos Radix UI instalados
+  - Design System tokens em `globals.css` (--radius: 0.5rem)
+  - TanStack Query, Zustand, React Hook Form, Zod
+  - Recharts, Sonner, cmdk, vaul, embla-carousel
+  - Build testado e funcionando ✅
 
 ---
 
@@ -111,6 +132,7 @@ APIs:     PH3 (pessoa física) + Azulx (CNPJ)
 
 | Documento | Descrição |
 |-----------|-----------|
+| [RULES.md](./RULES.md) | **🔒 Regras imutáveis do projeto** |
 | [00_INDEX.md](./00_INDEX.md) | Índice geral da documentação |
 | [11_requisitos_funcionais.md](./10_PRODUCT/11_requisitos_funcionais.md) | Lista de requisitos |
 | [13_hierarquia_usuarios.md](./10_PRODUCT/13_hierarquia_usuarios.md) | Roles e permissões |
