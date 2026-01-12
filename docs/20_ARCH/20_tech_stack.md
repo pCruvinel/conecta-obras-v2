@@ -2,7 +2,7 @@
 
 # 🛠️ Tech Stack & Padrões
 
-> Definição da stack tecnológica e convenções de código do projeto.
+> Definição da stack tecnológica e convenções de código do projeto **conectaObras**.
 
 ---
 
@@ -12,9 +12,9 @@
 
 | Tecnologia | Versão | Propósito |
 |------------|--------|-----------|
+| **Next.js** | `^14.x` | Framework React (App Router) |
 | **React** | `^18.x` | UI Library |
 | **TypeScript** | `^5.x` | Type Safety |
-| **Vite** | `^5.x` | Build Tool |
 
 ### UI & Styling
 
@@ -84,6 +84,8 @@ updated_at           -- TIMESTAMPTZ, trigger
 deleted_at           -- TIMESTAMPTZ, nullable (soft-delete)
 ```
 
+> 📖 Consulte [21_convencoes_nomenclatura.md](./21_convencoes_nomenclatura.md) para convenções detalhadas.
+
 ---
 
 ## 📐 Padrões de Código
@@ -96,36 +98,42 @@ deleted_at           -- TIMESTAMPTZ, nullable (soft-delete)
 | **Componentes** | Function Components + Hooks |
 | **Imutabilidade** | Sempre (spread, map, filter) |
 
-### Nomenclatura
+### Nomenclatura (Resumo)
 
 | Contexto | Convenção | Exemplo |
 |----------|-----------|---------|
-| **Variáveis** | camelCase, inglês | `const userName` |
-| **Funções** | camelCase, verbo | `getUserById()` |
-| **Componentes** | PascalCase | `UserProfile` |
-| **Arquivos componentes** | kebab-case | `user-profile.tsx` |
-| **Hooks** | use + PascalCase | `useUserData` |
-| **Types/Interfaces** | PascalCase | `UserProfile` |
-| **Constantes** | UPPER_SNAKE | `MAX_RETRY_COUNT` |
+| **Variáveis** | camelCase, descritivo | `clienteSelecionado` |
+| **Funções** | camelCase, verbo | `calcularTotal()` |
+| **Componentes** | PascalCase, tipo+nome | `FormularioCliente` |
+| **Arquivos** | kebab-case | `formulario-cliente.tsx` |
+| **Hooks** | use + descrição | `useCriarObra` |
+| **Types/Interfaces** | PascalCase | `TiposObra` |
+| **Constantes** | UPPER_SNAKE | `LIMITE_ITENS_PAGINA` |
+| **Booleanos** | prefixo descritivo | `estaCarregando`, `temErro` |
 
-### Estrutura de Arquivos
+> 📖 Guia completo em [21_convencoes_nomenclatura.md](./21_convencoes_nomenclatura.md)
+
+### Estrutura de Arquivos (Resumo)
 
 ```
 src/
-├── components/       # Componentes reutilizáveis
-│   └── ui/          # shadcn/ui components
-├── features/        # Módulos por domínio
+├── app/              # App Router (páginas)
+├── components/
+│   ├── ui/           # shadcn/ui components
+│   └── compartilhados/
+├── features/         # Módulos por domínio
 │   └── [feature]/
 │       ├── components/
 │       ├── hooks/
 │       ├── types/
 │       └── utils/
-├── hooks/           # Hooks globais
-├── lib/             # Configurações (supabase, etc)
-├── pages/           # Rotas/páginas
-├── types/           # Types globais
-└── utils/           # Funções utilitárias
+├── hooks/            # Hooks globais
+├── lib/              # Configurações (supabase, etc)
+├── types/            # Types globais
+└── utils/            # Funções utilitárias
 ```
+
+> 📖 Estrutura detalhada em [22_estrutura_projeto.md](./22_estrutura_projeto.md)
 
 ### Regras de Linting
 
@@ -135,7 +143,7 @@ src/
     "no-console": "warn",
     "no-unused-vars": "error",
     "prefer-const": "error",
-    "no-any": "warn"
+    "@typescript-eslint/no-explicit-any": "warn"
   }
 }
 ```
@@ -160,7 +168,17 @@ src/
 | **Hosting Frontend** | Vercel |
 | **Backend** | Supabase Cloud |
 | **CI/CD** | GitHub Actions |
-| **Monitoramento** | Supabase Dashboard |
+| **Monitoramento** | Supabase Dashboard + Vercel Analytics |
+
+---
+
+## 🔗 Documentação Relacionada
+
+| Documento | Descrição |
+|-----------|-----------|
+| [21_convencoes_nomenclatura.md](./21_convencoes_nomenclatura.md) | Guia completo de nomenclatura |
+| [22_estrutura_projeto.md](./22_estrutura_projeto.md) | Estrutura de pastas detalhada |
+| [23_adr_template.md](./23_adr_template.md) | Template para decisões arquiteturais |
 
 ---
 

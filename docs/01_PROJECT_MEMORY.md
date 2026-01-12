@@ -1,53 +1,49 @@
 # 🧠 Project Memory
 
-> **Diário de bordo do projeto.**  
+> **Diário de bordo do projeto conectaObras.**  
 > Este documento é a fonte de verdade para o contexto atual, decisões recentes e próximos passos.
 
 ---
 
 ## 📍 Contexto Atual
 
-<!-- Descreva o estado atual do projeto em 2-3 frases -->
-
 | Campo | Valor |
 |-------|-------|
-| **Fase** | `[Definir: Discovery / MVP / Beta / Produção]` |
-| **Sprint** | `[Número ou nome da sprint atual]` |
-| **Foco Principal** | `[O que está sendo trabalhado agora]` |
+| **Fase** | `Inicial / Estruturação` |
+| **Sprint** | `Setup de Documentação` |
+| **Foco Principal** | Padronização de código e estruturação do projeto |
 
 ### Stack Tecnológica
 
 ```
-Frontend: [React / Next.js / Vue / etc.]
-Backend:  [Node / Supabase / etc.]
-Database: [PostgreSQL / Supabase]
-Deploy:   [Vercel / AWS / etc.]
+Frontend: Next.js 14 (App Router) + React 18 + TypeScript
+UI:       Tailwind CSS + shadcn/ui + Radix UI
+Backend:  Supabase (Auth, Database, Storage, Edge Functions)
+Database: PostgreSQL 15+
+Deploy:   Vercel (Frontend) + Supabase Cloud (Backend)
 ```
 
 ---
 
 ## 🔧 Últimas Decisões Técnicas
 
-<!-- Registre decisões importantes com data e justificativa breve -->
-
 | Data | Decisão | Justificativa |
 |------|---------|---------------|
-| YYYY-MM-DD | Exemplo: Adotamos Zustand para state management | Simplicidade vs Redux, bundle menor |
-| YYYY-MM-DD | — | — |
+| 2026-01-12 | Criação de guia de nomenclatura Clean Code pt-BR | Padronização e consistência no código |
+| 2026-01-12 | Estrutura de features por domínio | Isolamento e manutenibilidade |
+| 2026-01-12 | Adoção de prefixos pt-BR para booleanos (`esta`, `tem`, `pode`) | Legibilidade para equipe brasileira |
 
-> 💡 **Dica:** Para decisões complexas, crie um ADR em `20_ARCH/`.
+> 💡 **Dica:** Para decisões complexas, crie um ADR usando `20_ARCH/23_adr_template.md`.
 
 ---
 
 ## 📋 Próximos Passos (Backlog Prioritário)
 
-<!-- Mantenha apenas os 5-10 itens mais prioritários -->
-
-- [ ] `[P0]` Item mais urgente
-- [ ] `[P1]` Segundo mais importante
-- [ ] `[P1]` Terceiro item
-- [ ] `[P2]` Item de menor prioridade
-- [ ] `[P2]` Outro item
+- [ ] `[P0]` Configurar projeto Next.js com estrutura definida
+- [ ] `[P0]` Configurar Supabase e criar tabelas iniciais
+- [ ] `[P1]` Implementar autenticação com Supabase Auth
+- [ ] `[P1]` Criar componentes base do design system
+- [ ] `[P2]` Documentar primeiro módulo usando o template
 
 > **Legenda:**  
 > `P0` = Crítico/Bloqueante | `P1` = Alta prioridade | `P2` = Média | `P3` = Baixa
@@ -56,22 +52,31 @@ Deploy:   [Vercel / AWS / etc.]
 
 ## 🐛 Bugs Conhecidos
 
-<!-- Liste bugs que ainda não foram corrigidos -->
-
 | ID | Descrição | Severidade | Status |
 |----|-----------|------------|--------|
-| #001 | — | `[Crítico/Alto/Médio/Baixo]` | `[Aberto/Em análise]` |
+| — | Nenhum bug registrado ainda | — | — |
 
 ---
 
 ## 📝 Notas de Sessão
 
-<!-- Use esta seção para anotações rápidas durante o desenvolvimento -->
-
 ### 2026-01-12
 
-- Estrutura de documentação inicial criada
-- Próximo passo: preencher contexto do projeto
+- ✅ Estrutura de documentação criada
+- ✅ Guia de convenções de nomenclatura Clean Code pt-BR definido
+- ✅ Estrutura de pastas Next.js documentada
+- ✅ Template ADR criado
+- ✅ Tech stack atualizado para Next.js
+
+---
+
+## 📚 Documentação Relacionada
+
+| Documento | Descrição |
+|-----------|-----------|
+| [00_INDEX.md](./00_INDEX.md) | Índice geral da documentação |
+| [21_convencoes_nomenclatura.md](./20_ARCH/21_convencoes_nomenclatura.md) | Guia de nomenclatura |
+| [22_estrutura_projeto.md](./20_ARCH/22_estrutura_projeto.md) | Estrutura de pastas |
 
 ---
 
