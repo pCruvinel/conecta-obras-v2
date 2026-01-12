@@ -2,7 +2,7 @@
 
 # 🛠️ Tech Stack & Padrões
 
-> Definição da stack tecnológica e convenções de código do projeto **conectaObras**.
+> Definição da stack tecnológica e convenções de código do projeto **Conecta Obras**.
 
 ---
 
@@ -12,27 +12,27 @@
 
 | Tecnologia | Versão | Propósito |
 |------------|--------|-----------|
-| **Next.js** | `^14.x` | Framework React (App Router) |
-| **React** | `^18.x` | UI Library |
-| **TypeScript** | `^5.x` | Type Safety |
+| **Next.js** | `^16.0.10+` | Framework React (App Router) |
+| **React** | `^19.2.0+` | UI Library |
+| **TypeScript** | `^5.x+` | Type Safety |
 
 ### UI & Styling
 
-| Tecnologia | Propósito |
-|------------|-----------|
-| **Tailwind CSS** | Utility-first styling |
-| **shadcn/ui** | Component library |
-| **Radix UI** | Primitivos acessíveis |
-| **Lucide Icons** | Iconografia |
+| Tecnologia | Versão | Propósito |
+|------------|--------|-----------|
+| **Tailwind CSS** | `^4.1.9+` | Utility-first styling |
+| **shadcn/ui** | `latest` | Component library |
+| **Radix UI** | `latest` | Primitivos acessíveis |
+| **Lucide Icons** | `latest` | Iconografia |
 
 ### State & Data
 
-| Tecnologia | Propósito |
-|------------|-----------|
-| **TanStack Query** | Server state / caching |
-| **Zustand** | Client state (quando necessário) |
-| **React Hook Form** | Formulários |
-| **Zod** | Validação de schemas |
+| Tecnologia | Versão | Propósito |
+|------------|--------|-----------|
+| **TanStack Query** | `^5.x` | Server state / caching |
+| **Zustand** | `^5.x` | Client state (quando necessário) |
+| **React Hook Form** | `^7.x` | Formulários |
+| **Zod** | `^3.x` | Validação de schemas |
 
 ---
 
@@ -40,11 +40,11 @@
 
 ### Core
 
-| Tecnologia | Propósito |
-|------------|-----------|
-| **Supabase** | BaaS (Auth, DB, Storage, Edge Functions) |
-| **PostgreSQL** | Banco de dados relacional |
-| **Deno** | Runtime para Edge Functions |
+| Tecnologia | Versão | Propósito |
+|------------|--------|-----------|
+| **Supabase** | `latest` | BaaS (Auth, DB, Storage, Edge Functions) |
+| **PostgreSQL** | `15+` | Banco de dados relacional |
+| **Deno** | `2.x` | Runtime para Edge Functions |
 
 ### Serviços Supabase
 
@@ -169,6 +169,21 @@ src/
 | **Backend** | Supabase Cloud |
 | **CI/CD** | GitHub Actions |
 | **Monitoramento** | Supabase Dashboard + Vercel Analytics |
+
+---
+
+## ⚠️ Notas sobre Versões
+
+> [!IMPORTANT]
+> Estamos utilizando as **versões mais recentes** de todas as tecnologias para aproveitar as últimas features e melhorias de performance.
+
+### Principais Mudanças
+
+| Tecnologia | Novidades |
+|------------|-----------|
+| **Next.js 16** | Turbopack estável, melhorias no App Router |
+| **React 19** | React Compiler, Server Components otimizados |
+| **Tailwind v4** | Nova engine, sintaxe simplificada, CSS nativo |
 
 ---
 
