@@ -117,6 +117,56 @@ conectaObras/
 └─────────────────────────────────────────┘
 ```
 
+### 3.3 Componentes Compartilhados
+
+Os componentes em `src/components/compartilhados/` são building blocks reutilizáveis.
+
+#### **AppSidebar** (`app-sidebar.tsx`)
+
+Sidebar principal usando primitivos Shadcn Sidebar.
+
+```tsx
+import { AppSidebar } from '@/components/compartilhados/app-sidebar'
+
+<SidebarProvider>
+  <AppSidebar />
+  <SidebarInset>{children}</SidebarInset>
+</SidebarProvider>
+```
+
+**Características**:
+- Collapsible para ícones (`Cmd+B` / `Ctrl+B`)
+- 3 grupos: Principal, Ferramentas, Administração
+- Footer com dropdown de usuário
+- Fonte: `text-base` (16px), altura: `h-9`
+
+#### **CabecalhoPagina** (`cabecalho-pagina.tsx`)
+
+Header com breadcrumbs e slot para ações.
+
+```tsx
+import { CabecalhoPagina } from '@/components/compartilhados/cabecalho-pagina'
+
+<CabecalhoPagina breadcrumbs={[{ label: 'CRM' }]}>
+  <Button>Nova Ação</Button>
+</CabecalhoPagina>
+```
+
+**Props**:
+- `breadcrumbs`: Array de `{ label: string; href?: string }`
+- `children`: Ações do header (botões, filtros)
+
+#### **LayoutAutenticado** (`layouts/layout-autenticado.tsx`)
+
+Wrapper para rotas autenticadas com sidebar e controle de scroll.
+
+```tsx
+// (auth)/layout.tsx
+export default function AuthLayout({ children }) {
+  return <LayoutAutenticado>{children}</LayoutAutenticado>
+}
+```
+
 ---
 
 ## 4. Fundamentos
