@@ -19,6 +19,7 @@ Este workflow configura o contexto para o desenvolvimento dos módulos de **Gest
    - **Foco:** CRM, SDR, Consulta Plus, Chat IA.
    - **Restrições:** NÃO altere estrutura de Auth, Leads ou Admin sem consultar o backlog do Kassio.
    - **Cor:** Laranja 🟠
+   - **Documentação:** SEMPRE inclua no plano de execução a atualização da documentação técnica e funcional ao finalizar a tarefa.
 
 4. Listar as tarefas da Sprint atual atribuídas ao **Pedro**.
 

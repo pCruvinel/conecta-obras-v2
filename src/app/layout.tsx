@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: 'Plataforma de mapeamento de obras para geração de leads',
 }
 
+import { AppProviders } from '@/components/providers/app-providers'
+
+// ... existing imports
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
+        <AppProviders>
+          {children}
+        </AppProviders>
       </body>
     </html>
   )

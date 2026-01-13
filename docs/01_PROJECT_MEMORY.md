@@ -65,9 +65,9 @@ APIs:     PH3 (pessoa física) + Zoox (CNPJ)
 ### MVP - Prioridade Alta
 
 - [x] `[P0]` Configurar projeto Next.js com estrutura documentada ✅
-- [ ] `[P0]` Criar conta Supabase e schema inicial
-- [ ] `[P0]` Implementar autenticação (login, registro, recuperação)
-- [ ] `[P0]` Criar trigger auth → public.usuarios
+- [X] `[P0]` Criar conta Supabase e schema inicial
+- [X] `[P0]` Implementar autenticação (login, registro, recuperação)
+- [X] `[P0]` Criar trigger auth → public.usuarios
 - [ ] `[P0]` Desenvolver Painel de cadastro (Franquia → Loja → Vendedor)
 - [ ] `[P0]` Desenvolver página de Leads Obras com filtros
 
@@ -125,6 +125,28 @@ APIs:     PH3 (pessoa física) + Zoox (CNPJ)
   - TanStack Query, Zustand, React Hook Form, Zod
   - Recharts, Sonner, cmdk, vaul, embla-carousel
   - Build testado e funcionando ✅
+- ✅ **Componentes UI e Layout inicializados**:
+  - `src/components` estruturado (ui, compartilhados, layouts)
+  - Layout autenticado, Sidebar e Header implementados
+  - Shadcn/UI configurado com componentes base (button, sheet, avatar, card, etc)
+  - Página de Dashboard criada para validação
+- ✅ **Sidebar modernizado com Shadcn Sidebar**:
+  - `app-sidebar.tsx` criado com primitivos Shadcn
+  - `SidebarProvider` + `SidebarInset` pattern implementado
+  - Collapsible to icons (`Cmd+B` / `Ctrl+B`)
+  - Estado persistido via cookies
+  - `SidebarTrigger` + `Breadcrumb` no header
+- ✅ **CRM Kanban modernizado**:
+  - Header com breadcrumb, pesquisa, filtros de tags e menu de configurações
+  - Colunas com glassmorphism (`bg-muted/30`)
+  - Cards com hierarquia visual aprimorada
+  - Layout de scroll corrigido (sem scrollbars externos)
+- ✅ **Ajustes de Design System**:
+  - Sidebar: fonte aumentada para `text-base` (16px)
+  - Input: focus ring reduzido para 2px
+  - Layout: `overflow:hidden` no html/body para controle de scroll
+
+
 
 ---
 

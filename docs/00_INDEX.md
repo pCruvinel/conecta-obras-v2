@@ -40,6 +40,7 @@
 | [20_tech_stack.md](./20_ARCH/20_tech_stack.md) | Stack tecnológica (Next.js, Supabase, Tailwind) |
 | [21_convencoes_nomenclatura.md](./20_ARCH/21_convencoes_nomenclatura.md) | **Guia Clean Code pt-BR** ⭐ |
 | [22_estrutura_projeto.md](./20_ARCH/22_estrutura_projeto.md) | Estrutura de pastas do projeto |
+| [database_schema.md](./20_ARCH/database_schema.md) | **Schema do Banco de Dados** ⭐ |
 | [23_adr_template.md](./20_ARCH/23_adr_template.md) | Template para decisões arquiteturais |
 | [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) | **Sistema de Design (UI/UX)** ⭐ |
 

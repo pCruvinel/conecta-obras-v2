@@ -130,6 +130,7 @@ O sistema utiliza cores semânticas baseadas em OKLCH para garantir consistênci
 ```css
 /* Light Mode */
 --primary: #2B4A9D                    /* Azul institucional */
+--brand-red: #E63946                  /* Vermelho institucional */
 --primary-foreground: oklch(0.985 0 0) /* Branco quase puro */
 --secondary: oklch(0.97 0 0)           /* Cinza muito claro */
 --destructive: oklch(0.577 0.245 27.325) /* Vermelho de alerta */
@@ -332,7 +333,7 @@ import { Input } from '@/components/ui/input'
 **Características**:
 - Altura padrão: `h-9` (36px)
 - Shadow sutil: `shadow-xs`
-- Focus ring: 3px
+- Focus ring: 2px (reduzido para visual mais sutil)
 - Suporte a file upload com estilização
 - Background transparente adaptável a temas
 
@@ -797,6 +798,68 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
   </TabsContent>
 </Tabs>
 ```
+
+#### **Sidebar**
+
+Sistema de navegação lateral colapsável com suporte a ícones.
+
+```tsx
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+  SidebarInset,
+  SidebarTrigger,
+  SidebarRail,
+} from '@/components/ui/sidebar'
+
+// Uso básico
+<SidebarProvider>
+  <Sidebar collapsible="icon">
+    <SidebarHeader>...</SidebarHeader>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Menu</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild isActive={true} tooltip="Dashboard">
+                <Link href="/dashboard">
+                  <LayoutDashboard />
+                  <span>Dashboard</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+    <SidebarFooter>...</SidebarFooter>
+    <SidebarRail />
+  </Sidebar>
+  <SidebarInset>
+    {/* Conteúdo principal */}
+  </SidebarInset>
+</SidebarProvider>
+```
+
+**Características**:
+- Fonte: `text-base` (16px) para melhor legibilidade
+- Altura do item: `h-9` (36px)
+- Collapsible modes: `icon`, `offcanvas`, `none`
+- Atalho: `Cmd+B` / `Ctrl+B` para toggle
+- Estado persistido via cookies
+- Tooltips automáticos quando colapsado
+- Variantes de tamanho: `default` (h-9), `sm` (h-7), `lg` (h-12)
+
 
 ### 5.5 Overlays
 

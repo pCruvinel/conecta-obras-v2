@@ -19,6 +19,7 @@ Este workflow configura o contexto para o desenvolvimento dos módulos de **Fund
    - **Foco:** Autenticação, Módulo de Leads, Dashboard, Painel Admin.
    - **Restrições:** NÃO altere lógica interna do CRM, SDR ou IA sem consultar o backlog do Pedro.
    - **Cor:** Azul 🔵
+   - **Documentação:** SEMPRE inclua no plano de execução a atualização da documentação técnica e funcional ao finalizar a tarefa.
 
 4. Listar as tarefas da Sprint atual atribuídas ao **Kassio**.
 
