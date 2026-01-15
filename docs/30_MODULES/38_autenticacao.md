@@ -25,14 +25,14 @@
 
 | ID | Feature | Status | Descrição |
 |----|---------|--------|-----------|
-| F01 | Login e-mail/senha | ⏳ | Autenticação básica |
-| F02 | Registro externo | ⏳ | Cadastro público (role: convidado) |
+| F01 | Login e-mail/senha | ✅ | Autenticação básica |
+| F02 | Registro externo | ✅ | Cadastro público (mockado/desabilitado) |
 | F03 | Convite interno | ⏳ | Cadastro via link de convite |
-| F04 | Recuperação de senha | ⏳ | E-mail de reset |
+| F04 | Recuperação de senha | ✅ | E-mail de reset (mockado) |
 | F05 | Reset de senha | ⏳ | Formulário de nova senha |
 | F06 | E-mails personalizados | ⏳ | Templates customizados |
 | F07 | Modo convidado | ⏳ | Acesso limitado sem compra |
-| F08 | Trigger auth → public | ⏳ | Sincronizar usuários |
+| F08 | Trigger auth → public | ✅ | Sincronizar usuários |
 
 ---
 

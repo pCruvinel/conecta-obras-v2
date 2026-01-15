@@ -9,7 +9,7 @@ export async function LayoutAutenticado({ children }: { children: React.ReactNod
   return (
     <SidebarProvider defaultOpen={defaultOpen} className="!min-h-0 h-full">
       <AppSidebar />
-      <SidebarInset className="overflow-hidden">
+      <SidebarInset className="overflow-auto">
         {children}
       </SidebarInset>
     </SidebarProvider>
