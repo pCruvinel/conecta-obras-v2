@@ -25,13 +25,13 @@
 
 | ID | Feature | Status | Descrição |
 |----|---------|--------|-----------|
-| F01 | Total de obras | ⏳ | Contador geral de obras no sistema |
+| F01 | Total de obras | ✅ | Contador geral de obras no sistema |
 | F02 | Filtro por estado | ⏳ | Seleção de UF |
 | F03 | Filtro por cidade | ⏳ | Seleção de município |
-| F04 | Obras por categoria | ⏳ | Ativas, encerradas, nulas |
+| F04 | Obras por categoria | ✅ | Ativas, encerradas, nulas (Agregado) |
 | F05 | Obras por tipo | ⏳ | Alvenaria, elétrica, etc. |
 | F06 | Gráficos dinâmicos | ⏳ | Visualização de distribuição |
-| F07 | Contador semanal | ⏳ | "Novas obras esta semana" |
+| F07 | Contador semanal | ✅ | "Novas obras esta semana" |
 | F08 | Cards clicáveis | ⏳ | Redireciona para Leads filtrado |
 
 ### Requisitos Relacionados

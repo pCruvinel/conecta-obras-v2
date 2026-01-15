@@ -165,6 +165,16 @@ interface StatusAcompanhamento {
 | `API Azulx` | API externa | Buscar dados por CNPJ |
 | `Google Maps` | API externa | Exibir localização |
 
+### 3. Funcionalidades (Obras)
+| Feature | Status | Detalhes |
+|---------|--------|----------|
+| Listagem de Obras | ✅ | Grid responsivo com paginação (Load More/Infinite Scrool via React Query) |
+| Filtros Avançados | ✅ | Estado, Cidade, Categoria, Situação |
+| Detalhes da Obra | ✅ | Página dedicada com todas as informações |
+| Busca Textual | ✅ | Pesquisa por nome/endereço |
+| Integração Maps | ⏳ | Placeholder implementado |
+| Enviar p/ CRM | ⏳ | Botão mockado (aguardando módulo CRM) |
+
 ### Expõe (Exports)
 
 | Export | Tipo | Consumido por |

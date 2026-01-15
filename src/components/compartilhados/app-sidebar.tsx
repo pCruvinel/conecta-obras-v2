@@ -16,6 +16,14 @@ import {
   LogOut,
 } from "lucide-react"
 
+import { useLogout } from "@/features/autenticacao/hooks/use-logout"
+import { SidebarCollapsibleItem } from "@/components/compartilhados/sidebar-collapsible-item"
+
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
 import {
   Sidebar,
   SidebarContent,
@@ -27,6 +35,9 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
 import {
@@ -41,8 +52,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 // Menu principal
 const menuPrincipal = [
   { titulo: "Dashboard", url: "/dashboard", icone: LayoutDashboard },
-  { titulo: "Obras", url: "/obras", icone: Building2 },
-  { titulo: "Leads", url: "/leads", icone: Users },
+  {
+    titulo: "Leads",
+    icone: Users,
+    isActive: true,
+    items: [
+      { titulo: "Obras", url: "/leads/obras" },
+      { titulo: "Empresas", url: "/leads/empresas" },
+    ],
+  },
   { titulo: "CRM", url: "/crm", icone: Kanban },
 ]
 
@@ -59,6 +77,7 @@ const menuAdmin = [
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname()
+  const { logout, estaDeslogando } = useLogout()
 
   return (
     <Sidebar collapsible="icon" {...props}>
@@ -89,12 +108,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarGroupContent>
             <SidebarMenu>
               {menuPrincipal.map((item) => {
+                // Renderização para itens com submenu
+                if (item.items) {
+                  return <SidebarCollapsibleItem key={item.titulo} item={item} pathname={pathname} />
+                }
+
+                // Renderização para itens simples
                 const estaAtivo = pathname === item.url || pathname?.startsWith(`${item.url}/`)
                 return (
                   <SidebarMenuItem key={item.titulo}>
                     <SidebarMenuButton asChild isActive={estaAtivo} tooltip={item.titulo}>
                       <Link href={item.url}>
-                        <item.icone />
+                        {item.icone && <item.icone />}
                         <span>{item.titulo}</span>
                       </Link>
                     </SidebarMenuButton>
@@ -182,9 +207,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   Configurações
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">
+                <DropdownMenuItem
+                  className="text-destructive cursor-pointer"
+                  onClick={logout}
+                  disabled={estaDeslogando}
+                >
                   <LogOut className="mr-2 h-4 w-4" />
-                  Sair
+                  {estaDeslogando ? 'Saindo...' : 'Sair'}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
