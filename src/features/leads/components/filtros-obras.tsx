@@ -6,7 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { Search, Check, ChevronsUpDown, Loader2 } from "lucide-react";
 import { useObras } from "../hooks/use-obras";
-import { useState, useEffect } from "react";
+import { useGeofencing } from "@/hooks/use-geofencing";
+import { useState, useEffect, useMemo } from "react";
 import {
     Command,
     CommandEmpty,
@@ -59,6 +60,7 @@ interface CidadeIBGE {
 
 export function FiltrosObras() {
     const { setFiltros, filtros, triggerSearch } = useObras();
+    const { isAdmin, estadosPermitidos, cidadesPermitidas, temRestricao } = useGeofencing();
 
     // Estado local para evitar fetch automático enquanto digita
     const [localFiltros, setLocalFiltros] = useState(filtros);
@@ -72,6 +74,19 @@ export function FiltrosObras() {
     const [loadingCidades, setLoadingCidades] = useState(false);
     const [openCidade, setOpenCidade] = useState(false);
     const [mostrarAvancados, setMostrarAvancados] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    // Filtra estados baseado no geofencing (apenas após mount para evitar hydration mismatch)
+    const estadosFiltrados = useMemo(() => {
+        if (!mounted) return ESTADOS_BRASIL; // SSR: mostra todos
+        const permitidos = estadosPermitidos('obras');
+        if (permitidos.length === 0) return ESTADOS_BRASIL; // Sem restrição
+        return ESTADOS_BRASIL.filter(e => permitidos.includes(e.sigla));
+    }, [estadosPermitidos, mounted]);
 
     // Buscar cidades ao selecionar estado (Baseado no estado LOCAL)
     useEffect(() => {
@@ -80,7 +95,20 @@ export function FiltrosObras() {
             fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${localFiltros.estado}/municipios`)
                 .then(res => res.json())
                 .then(data => {
-                    const cidadesOrdenadas = data.sort((a: CidadeIBGE, b: CidadeIBGE) => a.nome.localeCompare(b.nome));
+                    let cidadesOrdenadas = data.sort((a: CidadeIBGE, b: CidadeIBGE) => a.nome.localeCompare(b.nome));
+
+                    // Filtrar cidades baseado no geofencing
+                    const cidadesPermitidas_ = cidadesPermitidas('obras', localFiltros.estado || '');
+                    // Se a lista de cidades tiver "TODAS" ou estiver vazia, não filtra
+                    const temTodasAsCidades = cidadesPermitidas_.length === 0 ||
+                        cidadesPermitidas_.some(c => c.toUpperCase() === 'TODAS');
+
+                    if (!temTodasAsCidades && cidadesPermitidas_.length > 0) {
+                        cidadesOrdenadas = cidadesOrdenadas.filter((c: CidadeIBGE) =>
+                            cidadesPermitidas_.includes(c.nome)
+                        );
+                    }
+
                     setCidades(cidadesOrdenadas);
                     setLoadingCidades(false);
                 })
@@ -91,7 +119,7 @@ export function FiltrosObras() {
         } else {
             setCidades([]);
         }
-    }, [localFiltros.estado]);
+    }, [localFiltros.estado, cidadesPermitidas]);
 
     const handleBuscar = () => {
         // Envia o estado local para o global e dispara a busca
@@ -137,15 +165,15 @@ export function FiltrosObras() {
                 <div className="min-w-[140px] flex-grow md:flex-grow-0 space-y-1">
                     <Label className="text-xs font-semibold text-primary">Estado *</Label>
                     <Select
-                        value={localFiltros.estado || "todos"}
+                        value={localFiltros.estado || (mounted && temRestricao('obras') ? "" : "todos")}
                         onValueChange={handleEstadoChange}
                     >
                         <SelectTrigger className="h-9 text-sm border-primary/20 bg-primary/5 w-full">
                             <SelectValue placeholder="Selecione..." />
                         </SelectTrigger>
                         <SelectContent className="max-h-[300px]">
-                            <SelectItem value="todos">Todos</SelectItem>
-                            {ESTADOS_BRASIL.map((estado) => (
+                            {(!mounted || !temRestricao('obras')) && <SelectItem value="todos">Todos</SelectItem>}
+                            {estadosFiltrados.map((estado) => (
                                 <SelectItem key={estado.sigla} value={estado.sigla}>
                                     {estado.sigla} - {estado.nome}
                                 </SelectItem>

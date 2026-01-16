@@ -9,6 +9,7 @@ interface CardMetricaProps {
     icone: LucideIcon;
     tendencia?: number; // % de variação
     className?: string;
+    iconClassName?: string;
 }
 
 export function CardMetrica({
@@ -18,6 +19,7 @@ export function CardMetrica({
     icone: Icone,
     tendencia,
     className,
+    iconClassName,
 }: CardMetricaProps) {
     return (
         <Card className={cn("overflow-hidden", className)}>
@@ -25,7 +27,7 @@ export function CardMetrica({
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                     {titulo}
                 </CardTitle>
-                <Icone className="h-4 w-4 text-muted-foreground" />
+                <Icone className={cn("h-4 w-4 text-muted-foreground", iconClassName)} />
             </CardHeader>
             <CardContent>
                 <div className="text-2xl font-bold">{valor}</div>
